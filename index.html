@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity Monitor Test Page</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8fbff, #eef3ff);
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    .hero {
+      background: #ffffff;
+      border: 1px solid #dbe4ff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: #f9fbff;
+      border: 1px solid #dbe4ff;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    button,
+    a.button-link {
+      appearance: none;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button.secondary,
+    a.button-link.secondary {
+      background: #e5edff;
+      color: #1d4ed8;
+    }
+
+    .sandbox {
+      margin-top: 28px;
+      min-height: 180px;
+      border: 2px dashed #bfd0ff;
+      border-radius: 14px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Activity Monitoring Test Page</h1>
+      <p>
+        This is a simple static page you can host with GitHub Pages and use to
+        test user activity tracking, click events, scrolling, keyboard input,
+        and idle behavior.
+      </p>
+      <p>
+        Interact with the buttons, links, form fields, and page scroll area
+        after you add your monitoring script.
+      </p>
+
+      <div class="actions">
+        <button id="primary-action" type="button">Click Me</button>
+        <button class="secondary" id="secondary-action" type="button">Secondary Action</button>
+        <a class="button-link secondary" href="#interaction-zone">Jump to Interaction Zone</a>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h2>Keyboard Input</h2>
+          <p>Type in the field below to verify keypress tracking.</p>
+          <label for="notes">Notes</label><br />
+          <input
+            id="notes"
+            name="notes"
+            type="text"
+            placeholder="Type something here"
+            style="margin-top: 10px; width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #cbd5e1;"
+          />
+        </article>
+
+        <article class="card">
+          <h2>Pointer Movement</h2>
+          <p>Move your mouse around this page and hover over different elements.</p>
+          <label>
+            <input type="checkbox" id="test-checkbox" />
+            Toggle this checkbox
+          </label>
+        </article>
+
+        <article class="card">
+          <h2>Navigation</h2>
+          <p>Use this link if you want to test outbound link or anchor interactions.</p>
+          <a href="https://pages.github.com/" target="_blank" rel="noreferrer">Open GitHub Pages</a>
+        </article>
+      </div>
+
+      <section class="sandbox" id="interaction-zone">
+        <h2>Interaction Zone</h2>
+        <p>
+          This area is intentionally left simple so your script can attach
+          listeners, render logs, or show captured activity events here.
+        </p>
+        <p class="footer-note">
+          Suggested use: append a `<script>` tag near the end of this file or
+          load an external JavaScript file once you are ready.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Add your activity monitoring script below -->
+  <!-- Example: <script src="./monitor.js"></script> -->
+</body>
+</html>
