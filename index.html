@@ -159,20 +159,50 @@
       </div>
 
       <section class="sandbox" id="interaction-zone">
-        <h2>Interaction Zone</h2>
-        <p>
-          This area is intentionally left simple so your script can attach
-          listeners, render logs, or show captured activity events here.
-        </p>
-        <p class="footer-note">
-          Suggested use: append a `<script>` tag near the end of this file or
-          load an external JavaScript file once you are ready.
-        </p>
+        <h2>Submit Your Info</h2>
+        <form id="user-form" onsubmit="handleSubmit(event)">
+          <div style="margin-bottom: 14px;">
+            <label for="username">Name</label><br />
+            <input
+              id="username"
+              name="username"
+              type="text"
+              required
+              placeholder="Enter your name"
+              style="margin-top: 6px; width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #cbd5e1;"
+            />
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label for="email">Email</label><br />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="Enter your email"
+              style="margin-top: 6px; width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #cbd5e1;"
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <p id="form-message" style="margin-top: 14px; font-weight: 600; display: none;"></p>
       </section>
     </section>
   </main>
 
   <!-- Add your activity monitoring script below -->
   <!-- Example: <script src="./monitor.js"></script> -->
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('form-message');
+      msg.textContent = `Submitted! Name: ${name}, Email: ${email}`;
+      msg.style.display = 'block';
+      msg.style.color = '#16a34a';
+      event.target.reset();
+    }
+  </script>
 </body>
 </html>
