@@ -202,6 +202,8 @@
       msg.style.display = 'block';
       msg.style.color = '#16a34a';
       event.target.reset();
+      window.pagesense = window.pagesense || [];
+      window.pagesense.push(['identifyUser', name]);
     }
   </script>
 </body>
